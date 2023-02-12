@@ -1,0 +1,47 @@
+function loadCart() {
+    let products = JSON.parse(localStorage.getItem('products'));
+    let cartTotalItem = document.querySelector('.cart__value');
+    cartTotalItem.textContent = products.length;
+    products.forEach(product => {
+        let cartItem = document.createElement('tr');
+        cartItem.innerHTML = `<td><img src="${product.imgSrc}" alt='product image'></td>
+                  <td>${product.name}</td>
+                  <td><span class='cart-price'>${product.price},000vnd</span></td>
+                  <td>
+                    <button data-action="remove" onclick='decrease()'>-</button>
+                    <input name='product' class="product__quantity" type="number" min='1' max='100' value='${product.count}'>
+                    <button data-action="add" onclick='increase()'>+</button>
+                  </td>
+                  <td><span class='cart-total-value'>${parseInt(product.price) * product.count},000vnd</span></td>
+                  <td>
+                    <button class="delete--item"><i class="far fa-trash-alt"></i></button>
+                  </td>`;
+        tableBody.appendChild(cartItem);
+    });
+}
+
+function increase() {
+    let products = JSON.parse(localStorage.getItem('products'));
+    for (let i = 0; i < products.length; i++) {
+        let inputValue = document.querySelector('.product__quantity').value;
+        inputValue = products[i].count++;
+    }
+    localStorage.setItem('products', JSON.stringify(products));
+    tableBody.innerHTML = '';
+    loadCart();
+}
+
+function decrease() {
+    let products = JSON.parse(localStorage.getItem('products'));
+    for (let i = 0; i < products.length; i++) {
+        let inputValue = document.querySelector('.product__quantity').value;
+        inputValue = products[i].count--;
+        if (products[i].count <= 0) {
+            const itemIndex = products.findIndex(product => product.count === 0);
+            products.splice(itemIndex, 1);
+        }
+    }
+    localStorage.setItem('products', JSON.stringify(products));
+    tableBody.innerHTML = '';
+    loadCart();
+}

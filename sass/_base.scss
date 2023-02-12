@@ -1,0 +1,88 @@
+// COLOR VARIABLES
+$color-primary: #FF6753;
+$color-primary-light: #FF8F50;
+
+$color-secondary:  #577DB8;
+
+$color-background:white;
+
+$color-gray-dark-1:#333333;
+$color-gray-dark-2:#4F4F4F;
+$color-gray-dark-3: #f8f8f8;
+
+// $color-gray-dark-3: #efefef;
+// FONT VARIABLES
+$font-primary: 'TT Hoves', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+/////////////Queries//////////////
+
+$bp-largest:93.75rem;  //1500px
+$bp-large:78.125rem; // 1200px
+$bp-large-x:68.75rem; // 1100px
+$bp-medium:60rem; // 950px
+$bp-medium-x:54rem; // 870px
+$bp-small:49.129rem; //786px
+$bp-small-x:40.62rem; // 650px
+$bp-smallest:31.25rem; //500px
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    @media only screen and (max-width:$bp-largest){
+        font-size: 55%;
+    }
+   
+    @media only screen and (max-width:$bp-large){
+        font-size: 48%;
+    }
+    @media only screen and (max-width:$bp-large-x){
+        font-size: 42%;
+    }
+    @media only screen and (max-width:$bp-medium){
+        font-size: 38%;
+    }
+    @media only screen and (max-width:$bp-medium-x){
+        font-size: 35%;
+    }
+    @media only screen and (max-width:$bp-small){
+        font-size: 30%;
+    }  
+}
+body{
+background-color:$color-background ;
+position: relative;
+font-family: $font-primary;
+}
+.header{
+    @media only screen and (max-width:$bp-smallest){
+       
+        
+    } 
+}
+.section-1{
+
+    padding: 10rem 11.5rem;
+    width: 100%;
+    @media only screen and (max-width:$bp-smallest){
+        padding:5rem 3rem;
+        
+    }
+   
+}
+.section-2{
+
+    padding: 5rem 11.5rem;
+    width: 100%;
+    @media only screen and (max-width:$bp-smallest){
+        padding: 3rem;
+    }
+   
+}

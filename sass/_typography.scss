@@ -1,0 +1,97 @@
+
+///////////////////////////margins//////////////////////////////
+.mb-sm{margin-bottom: 2rem;}
+.mb-md{margin-bottom: 3rem;}
+.mb-lg{margin-bottom: 4rem;}
+.mb-hg{margin-bottom: 8rem;}
+.mb-hg-2{margin-bottom: 12rem;}
+
+
+
+.mr-sm{margin-right: 1rem;}
+.mr-md{margin-right: 2rem;}
+.mr-lg{margin-right: 6rem;}
+
+
+.ml-md{margin-left: 2rem;}
+.ml-lg{margin-left: 5rem;}
+.ml-lg{margin-left: 5rem;}
+
+
+
+/////////////////////////Queries/////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////buttons///////////////////////
+
+.primery__btn
+{
+  border: none;
+  padding: 1.6rem 7.2rem;
+  border-radius: 100px;
+
+  font-weight: 500; 
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 1rem 2rem rgba($color-primary,.4);
+  transition: all .3s;
+  background-image: linear-gradient(to right, $color-primary, $color-primary-light);
+  color: #fff;
+  @media only screen and (max-width:$bp-smallest){
+    font-size: 2.5rem !important;
+   
+}
+  &:active
+  {
+    transform: translateY(.5rem);
+  }
+  &:hover{
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary);
+    
+  }
+ 
+}
+.secondary__btn{
+  border: 1px solid #fff;
+  padding: 1.5rem 3rem;
+  width: 20.1rem;
+  border-radius: 100px;
+  font-weight: 500; 
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  background:transparent;
+  transition: all .3s;
+  cursor: pointer;
+  color: #fff;
+  @media only screen and (max-width:$bp-smallest){
+    font-size: 2.5rem !important;
+   
+}
+  &:hover{
+    background-image: linear-gradient(to right, $color-primary, $color-primary-light);
+    box-shadow: 0 1rem 2rem rgba($color-primary,.4);
+    border: 1px solid transparent;
+  }
+  &:active
+  {
+    transform: translateY(.5rem);
+  }
+
+
+}

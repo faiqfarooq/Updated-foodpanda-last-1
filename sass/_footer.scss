@@ -1,0 +1,52 @@
+// .footer{
+// display: flex;
+// justify-content: center;
+// align-items: center;
+//     background-color: $color-gray-dark-1;
+//     height: 13rem;
+//     width: 100%;
+//     position: relative;
+//     @media only screen and (max-width:$bp-small){
+//         height: 20rem;
+//         align-items: flex-end;
+//     }
+//     &__text{
+//         font-family: 'Gilroy';
+//         font-style: normal;
+//         font-weight: 500;
+//         font-size: 1.2rem;
+//         line-height: 200%;
+// /* identical to box height, or 24px */
+
+
+// /* Gray 3 */
+
+// color: #828282;
+// @media only screen and (max-width:$bp-small){
+//  margin-bottom: 2rem;
+//  font-size: 2.5rem;
+// }
+//     }
+//     &__img{
+//         position: absolute;
+//         // top: 3.3rem;
+//         left: 11rem;
+//         height: 50%;
+//         width: 15.14%;
+//         @media only screen and (max-width:$bp-small){
+//             top: 2rem;
+//          left: 50%;
+//          height: 55%;
+//          width: 50%;
+//          transform: translateX(-50%);
+//         }
+//     }
+// }
+
+.footer{
+    text-align: center;
+    font-size: 1.6rem;
+    background-color: #000000;
+    
+    color: #ffffff;
+   }

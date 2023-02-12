@@ -1,0 +1,37 @@
+.logo_img{
+    width:15.96rem ;
+    height: 3.6rem;
+    }
+    .cart-img{
+    width:3.8rem ;
+    height:4rem ;
+    }
+    .navbar{
+      position: fixed;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ffffff;
+      padding:1rem 5rem;
+      width: 100%;
+      box-shadow: 0 .1rem .5rem rgba(0, 0, 0, 0.20);
+      z-index: 1000;
+      &--1{
+      }
+    }
+    .navbar-2{
+position: relative;
+display: flex;
+
+justify-content: center;
+    &__count{
+      position: absolute;
+     top: 50% !important;
+      font-size: 1.6rem;
+      color: #ffffff;
+      padding: .4rem .8rem;
+      background-color: #D60265;
+      border-radius: 40%;
+    }
+  }
