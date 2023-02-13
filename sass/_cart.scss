@@ -130,12 +130,20 @@ margin-top: .8rem;
             display: flex;
             align-items: center;
             justify-content: center;
+<<<<<<< HEAD
             transition: all .3s;
+=======
+              transition: all .3s;
+>>>>>>> ce2be38f7e0406bc74c3972d1ff6f8a90852fce6
             &--span{
                 font-size: 3rem;
                 color: white;
             }
+<<<<<<< HEAD
             &:active{
+=======
+              &:active{
+>>>>>>> ce2be38f7e0406bc74c3972d1ff6f8a90852fce6
                 transform: scale(0.9);
             }
         }
