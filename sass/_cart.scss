@@ -130,9 +130,13 @@ margin-top: .8rem;
             display: flex;
             align-items: center;
             justify-content: center;
+              transition: all .3s;
             &--span{
                 font-size: 3rem;
                 color: white;
+            }
+              &:active{
+                transform: scale(0.9);
             }
         }
     }
