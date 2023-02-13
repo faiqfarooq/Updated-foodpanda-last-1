@@ -156,11 +156,15 @@ console.log('end')
                
                 ` <div class="cart__details--info" >
                 <div class="cart--main">
+                <div class="cart--main__ImgDesc"> 
                   <div class="cart--main__img"><img src="${itemImg}" alt="" class="cart--main__img--pic"></div>
                   <div class="cart--main__desc"><h2 class="cart--main__desc--header">${itemHeader}</h2>
                   <p class="cart--main__desc--text
                   ">${itemDetail}</p>
                   </div>
+                  </div>
+
+                  <div class="cart--main__other">
                   <div class="cart--main__quantity"> 
                     <button class="cart--main__quantity--btn" onclick="incrementValue(${id})"> 
                       <span class="cart--main__quantity--btn--span">+</span>
@@ -174,6 +178,7 @@ console.log('end')
                 `+"<img onclick='delElement("+ (j++) +")'  src='./images/icons8-waste-100.png'    class='card-btn--1'>"+  `
                   </div>
                  <div class='cart--main__totalprice' id="totalPrice"> ${(itemPrice * itemValue) }   </div>
+                 </div>
                 </div>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 `
@@ -207,10 +212,25 @@ function decrementValue(a)
 }
 
 function checkout(){
-    alert(" 🖐Hi. ✔ Your order is placed successfully 💯. Delecious food 👌 is waiting for U. Our 🏍 rider will reached very soon. Please wait for 30 mints 🚚.");
+//   document.getElementById("checkout").innerHTML=`<div id='card' class="animated fadeIn">
+    
+//   <div id='upper-side'>
+//     <i class="fa fa-check"></i>
+//     <h3 id='status'> Success </h3> 
+//  </div>
+//   <div id='lower-side'>
+//     <p id='message'>
+//       Congratulations, your order has been successfully placed.
+//     </p>
+//     <button id="contBtn" onclick="popupcheck">Continue</button>
+//   </div>
+// </div>`;
+  
+}
+function popupcheck(){
+  alert(" 🖐Hi. ✔ Your order is placed successfully 💯. Delecious food 👌 is waiting for U. Our 🏍 rider will reached very soon. Please wait for 30 mints 🚚.");
     window.location.reload(true);
 }
-
 // function incrementValue()
 // {
 //     var value = parseInt(document.getElementById('number').value, 10);
@@ -237,3 +257,31 @@ function checkout(){
 
 
 
+
+const modal=document.querySelector(".modal");
+const overlay=document.querySelector(".overlay");
+const modelClose=document.querySelector(".close-modal");
+const modelOpen=document.querySelectorAll(".show-modal");
+const modelOpenFun=()=>{
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+}
+
+for(let i=0;i<modelOpen.length;i++){
+  modelOpen[i].addEventListener('click',modelOpenFun)
+}
+const modelCloseFun=()=>{
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
+modelClose.addEventListener('click',modelCloseFun);
+overlay.addEventListener('click',modelCloseFun);
+
+document.addEventListener('keyup',function(e){
+ if(e.key === 'Escape' && !modal.classList.contains('hidden'))
+ {
+
+        modelCloseFun();
+    
+ }
+})

@@ -58,14 +58,17 @@
 
 
 
-   <section >
-    <div class="popular">
-    <img src="./images/icons8-fire-64.png"alt="popular image" class="popular__img">
-    <h2 class="popular__text">Popular <br> </h2>
-  </div>
-  <p><span class="popular--mostorder">Most ordered right now.
-
-  </span></p>
+   <section class="section-1" >
+    <div class="popular--main">
+      <div class="popular">
+        <img src="./images/icons8-fire-64.png"alt="popular image" class="popular__img">
+        <h2 class="popular__text">Popular <br> </h2>
+      </div>
+      <p><span class="popular--mostorder">Most ordered right now.
+    
+      </span></p>
+    </div>
+   
     <div class="cards"  id="cards">
 
     
@@ -216,18 +219,24 @@
 
    
    <section class="carts">
-    
+    <div class="carts--main"> 
+      <img src="./images/icons8-shopping-bag-64.png" alt="" class="carts--main__img">
+      <h2 class="carts--main__head" >Cart </h2>
+    </div>
+   
     <div class="cart">
       
 <div class="cart__details" >
   <div class="cart--main1">
-    <div class="cart--main1__img1"></div>
+ 
     <div class="cart--main1__desc1">Description
     </div>
+    <div class="cart--main1__other">
     <div class="cart--main1__quantity1"> Quantity</div>
     <div class="cart--main1__price1">Price</div>
     <div class="cart--main1__remove1">Remove</div>
     <div class="cart--main1__totalprice1">Total Price</div>
+    </div>
   </div>
   <div class="cart__details--info" >
     
@@ -300,7 +309,8 @@
         <div class="check--total--right" id="total"> 0.00</div>
       </div>
       <div class="check--btn">
-        <button class="check--btn__1" value="Reload Page" onclick="checkout()">Check Out</button>
+        <button class="check--btn__1 show-modal" value="Reload Page" onclick="checkout()">Check Out  </button>
+    
       </div>
       
      </div>
@@ -309,7 +319,27 @@
 
    </section>
  <section>
+
   <div id="checkout"></div>
+  
+  <div class="modal hidden">
+    <button class="close-modal">&times;</button>
+    <div id='card' class="animated fadeIn">
+    
+      <div id='upper-side'>
+        <i class="fa fa-check"></i>
+        <h3 id='status'> Success </h3> 
+     </div>
+      <div id='lower-side'>
+        <p id='message'>
+          Congratulations, your order has been successfully placed.
+        </p>
+        <button id="contBtn" onclick="popupcheck()">Continue</button>
+      </div>
+    </div>
+  </div>
+  <div class="overlay hidden"></div>
+
  </section>
     </main>
 
@@ -317,9 +347,8 @@
 
 
 
-
-    <!-- <footer class="footer"><footer>&copy; Copyright 2023
-    Faiq Farooq</footer> -->
+    <footer class="footer"><footer>&copy; Copyright 2023
+    Faiq Farooq</footer>
     <script src="script.js"></script>
   </body>
 </html>

@@ -44,17 +44,19 @@ html{
         font-size: 48%;
     }
     @media only screen and (max-width:$bp-large-x){
-        font-size: 42%;
+        font-size: 45%;
     }
     @media only screen and (max-width:$bp-medium){
-        font-size: 38%;
+        font-size: 45%;
     }
     @media only screen and (max-width:$bp-medium-x){
-        font-size: 35%;
+        font-size: 45%;
     }
     @media only screen and (max-width:$bp-small){
-        font-size: 30%;
+        font-size: 45%;
     }  
+    
+    
 }
 body{
 background-color:$color-background ;
@@ -68,14 +70,7 @@ font-family: $font-primary;
     } 
 }
 .section-1{
-
-    padding: 10rem 11.5rem;
     width: 100%;
-    @media only screen and (max-width:$bp-smallest){
-        padding:5rem 3rem;
-        
-    }
-   
 }
 .section-2{
 

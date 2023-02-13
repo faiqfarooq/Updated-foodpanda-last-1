@@ -1,10 +1,22 @@
 .logo_img{
     width:15.96rem ;
     height: 3.6rem;
+    @media only screen and (max-width:$bp-smallest){
+
+      width:22.98rem ;
+      height: 5.18rem;
+   
+   }
     }
     .cart-img{
     width:3.8rem ;
     height:4rem ;
+    @media only screen and (max-width:$bp-smallest){
+
+      width:4.8rem ;
+      height:5rem ;
+   
+   }
     }
     .navbar{
       position: fixed;
@@ -14,9 +26,14 @@
       justify-content: space-between;
       background-color: #ffffff;
       padding:1rem 5rem;
-      width: 100%;
+      width: 100vw;
       box-shadow: 0 .1rem .5rem rgba(0, 0, 0, 0.20);
-      z-index: 1000;
+      z-index: 10000;
+      @media only screen and (max-width:$bp-smallest){
+
+        padding:2rem 2rem;
+     
+     }
       &--1{
       }
     }
@@ -33,5 +50,14 @@ justify-content: center;
       padding: .4rem .8rem;
       background-color: #D60265;
       border-radius: 40%;
+      transition: all .3s;
+      @media only screen and (max-width:$bp-smallest){
+        padding: .4rem .8rem;
+        top: 60% !important;
+     
+     }
+    }
+    &:hover{
+    transform: scale(1.2);
     }
   }

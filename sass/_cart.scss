@@ -6,6 +6,20 @@
     @media only screen and (max-width:$bp-smallest){
         margin: 3rem 2rem;
     }
+    &--main{
+        display: flex;
+        align-items: center;
+        &__head{
+            padding: 2rem 0;
+            font-size: 4rem;
+    
+        }
+        &__img{
+            height: 4.5rem;
+            width: 4.5rem;
+        }
+    }
+    
 }
 .cart{
   font-size: 2rem;
@@ -18,13 +32,16 @@ width: 100%;
 
     &__details{
 flex: 0 0 70%;
-
 box-shadow: 0 .1rem .5rem rgba(0, 0, 0, 0.20);
-
 height: 50rem;
-overflow: scroll;
+
+overflow-y: scroll;
+width: 100%;
 @media only screen and (max-width:$bp-smallest){
+    height: 50rem;
     flex: 0 0 100%;
+    width: 100%;
+
 }
 &--list{
     display: flex;
@@ -43,32 +60,56 @@ overflow: scroll;
     align-items: center;
 margin-top: .8rem;
 
+&__ImgDesc{
 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 40%;
+}
+&__other{
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 60%;
+}
 
     &__img{
-        flex: 0 0 15%;
+        flex: 0 0 40%;
         &--pic{
            width: 90%;
            height:90%;
 
         }
+       
 
     }
     &__desc{
-        flex: 0 0 30%;
+        flex: 0 0 60%;
         display: flex;
         flex-direction: column;
         
         &--header{
+            font-size: 2.5rem;
+            font-weight: 500;
+            @media only screen and (max-width:$bp-smallest){
 
+                font-size: 2rem;
+                font-weight: 400;
+             
+             }
         }
         &--text{
-
+            display: none;
+            @media only screen and (max-width:$bp-smallest){
+               display: none;
+            
+            }
         }
 
     }
     &__quantity{
-        flex: 0 0 20%;
+        flex: 0 0 40%;
         display: flex;
         flex-direction: row;
        justify-content: center;
@@ -99,7 +140,7 @@ margin-top: .8rem;
         display: flex;
         justify-content: center;
 
-        flex: 0 0 10%;
+        flex: 0 0 20%;
 
     }
     &__remove{
@@ -108,7 +149,7 @@ margin-top: .8rem;
       
        
         justify-content: center;
-        flex: 0 0 10%;
+        flex: 0 0 20%;
 &--1{
     font-size: 2.5rem;
     font-weight: 700;
@@ -123,7 +164,7 @@ margin-top: .8rem;
     &__totalprice{
         display: flex;
         justify-content: center;
-        flex: 0 0 15%;
+        flex: 0 0 20%;
     }
 }
 
@@ -140,9 +181,15 @@ margin-top: .8rem;
 margin-bottom: 2rem;
 padding: 1rem 0;
 
-   
+// @media only screen and (max-width:$bp-smallest){
+//   flex-direction: column;
+// }
+&__other{
+    flex: 0 0 60%;
+    display: flex;
+}
     &__desc1{
-        flex: 0 0 45%;
+        flex: 0 0 40%;
         display: flex;
         align-items: center;
         &--header1{
@@ -151,7 +198,7 @@ padding: 1rem 0;
        
     }
     &__quantity1{
-        flex: 0 0 20%;
+        flex: 0 0 40%;
       display: flex;
       justify-content: center;
       
@@ -160,19 +207,19 @@ padding: 1rem 0;
     &__price1{
         display: flex;
         justify-content: center;
-        flex: 0 0 10%;
+        flex: 0 0 20%;
 
     }
     &__remove1{
         display: flex;
         justify-content: center;
-        flex: 0 0 10%;
+        flex: 0 0 20%;
 
     }
     &__totalprice1{
         display: flex;
         justify-content: center;
-        flex: 0 0 15%;
+        flex: 0 0 20%;
     }
 }
 
@@ -267,15 +314,22 @@ flex-direction: column;
 
 &--btn{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 5rem;
  overflow: hidden;
+
+
     &__1{
+       
         height: 5rem;
         width: 80%;
-        font-size: 3rem;
-        font-weight: 800;
+        font-size: 2.5rem;
+        font-weight: 700;
+        &--span{
+          margin-left: 50%;
+        }
     }
 }
 
