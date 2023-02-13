@@ -8,6 +8,7 @@ const dataArr=[
         itemDetail:"Crunchy chicken fillet, spicy mayo, lettuce, sandwiched between a sesame seed bun",
         itemValue:1,
         itemPrice:250,
+        itemtotal:0,
         itembtn: "btn1"
     },
     {
@@ -17,6 +18,7 @@ const dataArr=[
         itemDetail:"Spiced, buttery rice with 6 pcs of Hot Shots topped with our signature Vietnamese sauce",
         itemValue:1,
         itemPrice:320,
+        itemtotal:320,
         itembtn: "btn2"
     },
     {
@@ -26,6 +28,7 @@ const dataArr=[
         itemDetail:"8 Pieces of Hot Wings coated with a spicy Buffalo sauce and topped with chili flakes",
         itemValue:1,
         itemPrice:490,
+        itemtotal:490,
         itembtn: "btn3"
     },
     {
@@ -35,6 +38,7 @@ const dataArr=[
         itemDetail:"Double chicken fillet, jalapenos, cheese with our signature Vietnamese Sauce- sandwiched",
         itemValue:1,
         itemPrice:550,
+        itemtotal:550,
         itembtn: "btn4"
     },
     {
@@ -44,6 +48,7 @@ const dataArr=[
         itemDetail:"Feel good with 1 signature Zinger + 1 pc Hot & Crispy Chicken + 1 regular fries + 1 drink + 1 fresh coleslaw",
         itemPrice:850,
         itemValue:1,
+        itemtotal:850,
         itembtn: "btn5"
     },
     {
@@ -53,6 +58,7 @@ const dataArr=[
         itemDetail:"It includes 4 Zinger burgers + 4 pieces Hot and Crispy Chicken + 2 dinner rolls + 1.5 Ltr drink",
         itemValue:1,
         itemPrice:1999,
+        itemtotal:1999,
         itembtn: "btn6"
     },
    
@@ -139,23 +145,26 @@ function displaycart(){
     else{
       
         document.getElementById("cart").innerHTML=cart.map((val)=>{
-            var {id, itemValue,itemImg,itemHeader,itemDetail,itemPrice}=val;
+            var {id, itemValue,itemImg,itemHeader,itemDetail,itemPrice,itemtotal}=val;
     
-            subtotal=(subtotal *itemValue)+itemPrice;
-            gst= Math.round((4 / 100) * (subtotal *itemValue));
-            total=gst+(subtotal *itemValue)+delivery+discount;
+            subtotal=subtotal+itemtotal;
+            console.log('DFGHJKL')
+            console.log(itemtotal);
+            gst= Math.round((4 / 100) * (subtotal ));
+            total=gst+(subtotal )+delivery+discount;
             checkpopup=total;
-            document.getElementById("subtotal").innerHTML = (subtotal *itemValue) +".00";
+         
+            document.getElementById("subtotal").innerHTML = (subtotal) +".00";
             document.getElementById("gst").innerHTML = gst+".00";
             document.getElementById("delivery").innerHTML = delivery+".00";
             document.getElementById("total").innerHTML = "Rs "+total+".00";
-            console.log('start')
-console.log(cart)
-console.log('end')
+      
+console.log(cart);
+
 
             return(
                
-                ` <div class="cart__details--info" >
+                ` <div class="cart__details--info unique${id}" >
                 <div class="cart--main">
                 <div class="cart--main__ImgDesc"> 
                   <div class="cart--main__img"><img src="${itemImg}" alt="" class="cart--main__img--pic"></div>
@@ -178,11 +187,13 @@ console.log('end')
                   <div class="cart--main__remove">
                 `+"<img onclick='delElement("+ (j++) +")'  src='./images/icons8-waste-100.png'    class='card-btn--1'>"+  `
                   </div>
-                 <div class='cart--main__totalprice' id="totalPrice"> ${(itemPrice * itemValue) }   </div>
+                 <div class='cart--main__totalprice' id="totalPrice"> ${itemtotal }   </div>
                  </div>
                 </div>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                </div>
                 `
+
             )
             
         }).join(' ');
@@ -192,11 +203,12 @@ console.log('end')
 
 function incrementValue(a)
 {
-    console.log(a)
+  
        
          dataArr[a].itemValue = dataArr[a].itemValue +1;
+         dataArr[a].itemtotal = dataArr[a].itemPrice * dataArr[a].itemValue;
 
-   
+   console.log(dataArr[a].itemtotal);
          displaycart();
  
 }
@@ -206,6 +218,7 @@ function decrementValue(a)
 
     if(dataArr[a].itemValue>1){
         dataArr[a].itemValue = dataArr[a].itemValue -1;
+        dataArr[a].itemtotal = dataArr[a].itemPrice *dataArr[a].itemValue;
  
     }
          displaycart();
