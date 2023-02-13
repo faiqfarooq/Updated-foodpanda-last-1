@@ -61,7 +61,7 @@ const dataArr=[
 
 
 let i=0;
-
+let checkpopup;
 
 
 
@@ -120,6 +120,7 @@ function delElement(a){
 
   
     cart.splice(a, 1);
+    checkpopup=0;
     displaycart(a);
 }
 
@@ -143,7 +144,7 @@ function displaycart(){
             subtotal=(subtotal *itemValue)+itemPrice;
             gst= Math.round((4 / 100) * (subtotal *itemValue));
             total=gst+(subtotal *itemValue)+delivery+discount;
-
+            checkpopup=total;
             document.getElementById("subtotal").innerHTML = (subtotal *itemValue) +".00";
             document.getElementById("gst").innerHTML = gst+".00";
             document.getElementById("delivery").innerHTML = delivery+".00";
@@ -210,22 +211,41 @@ function decrementValue(a)
          displaycart();
     
 }
-
+const modal=document.querySelector(".modal");
+const overlay=document.querySelector(".overlay");
+const modelClose=document.querySelector(".close-modal");
+const modelOpen=document.querySelectorAll(".show-modal");
+const modelOpenFun=()=>{
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+}
 function checkout(){
-//   document.getElementById("checkout").innerHTML=`<div id='card' class="animated fadeIn">
-    
-//   <div id='upper-side'>
-//     <i class="fa fa-check"></i>
-//     <h3 id='status'> Success </h3> 
-//  </div>
-//   <div id='lower-side'>
-//     <p id='message'>
-//       Congratulations, your order has been successfully placed.
-//     </p>
-//     <button id="contBtn" onclick="popupcheck">Continue</button>
-//   </div>
-// </div>`;
+if(checkpopup>2){
+
+
   
+  modelOpenFun();
+  const modelCloseFun=()=>{
+      modal.classList.add('hidden');
+      overlay.classList.add('hidden');
+  }
+  modelClose.addEventListener('click',modelCloseFun);
+  overlay.addEventListener('click',modelCloseFun);
+  
+  document.addEventListener('keyup',function(e){
+   if(e.key === 'Escape' && !modal.classList.contains('hidden'))
+   {
+  
+          modelCloseFun();
+      
+   }
+  })
+}
+else{
+  alert("You have NOT selected any item.Kindly select an item before checkout. Thanks");
+  window.location.reload(true);
+}
+
 }
 function popupcheck(){
   alert(" 🖐Hi. ✔ Your order is placed successfully 💯. Delecious food 👌 is waiting for U. Our 🏍 rider will reached very soon. Please wait for 30 mints 🚚.");
@@ -258,30 +278,3 @@ function popupcheck(){
 
 
 
-const modal=document.querySelector(".modal");
-const overlay=document.querySelector(".overlay");
-const modelClose=document.querySelector(".close-modal");
-const modelOpen=document.querySelectorAll(".show-modal");
-const modelOpenFun=()=>{
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-}
-
-for(let i=0;i<modelOpen.length;i++){
-  modelOpen[i].addEventListener('click',modelOpenFun)
-}
-const modelCloseFun=()=>{
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
-}
-modelClose.addEventListener('click',modelCloseFun);
-overlay.addEventListener('click',modelCloseFun);
-
-document.addEventListener('keyup',function(e){
- if(e.key === 'Escape' && !modal.classList.contains('hidden'))
- {
-
-        modelCloseFun();
-    
- }
-})
