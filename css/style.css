@@ -463,10 +463,13 @@ body {
         border: none;
         display: flex;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        transition: all .3s; }
         .cart--main__quantity--btn--span {
           font-size: 3rem;
           color: white; }
+        .cart--main__quantity--btn:active {
+          transform: scale(0.9); }
     .cart--main__price {
       display: flex;
       justify-content: center;
