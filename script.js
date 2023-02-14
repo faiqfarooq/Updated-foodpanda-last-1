@@ -8,7 +8,7 @@ const dataArr=[
         itemDetail:"Crunchy chicken fillet, spicy mayo, lettuce, sandwiched between a sesame seed bun",
         itemValue:1,
         itemPrice:250,
-        itemtotal:0,
+        itemtotal:250,
         itembtn: "btn1"
     },
     {
